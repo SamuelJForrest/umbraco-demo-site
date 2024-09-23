@@ -1,0 +1,13 @@
+﻿@inherits UmbracoViewPage<HomePage>
+@{
+	Layout = "Master.cshtml";
+}
+
+<h1>@(!string.IsNullOrWhiteSpace(Model.Title) ? Model.Title : Model.Name)</h1>
+
+@if(Model.Content != null)
+{
+	<div class="richtext">
+		@Model.Content
+	</div>
+}
