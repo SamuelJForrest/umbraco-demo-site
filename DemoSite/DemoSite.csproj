@@ -8,9 +8,14 @@
     <Content Include="App_Plugins\CustomWelcomeDashboard\Lang\en-US.xml" />
     <Content Include="App_Plugins\CustomWelcomeDashboard\WelcomeDashboard.html" />
     <Content Include="app_plugins\testbackofficetour\backoffice\tours\tour.json" />
+    <Content Include="app_plugins\useragreementtour\backoffice\tours\tour.json" />
+    <Content Include="App_Plugins\UserAgreementTour\user-agreement.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app_plugins\customwelcomedashboard\package.manifest" />
+    <None Include="App_Plugins\UserAgreementTour\init.js" />
+    <None Include="app_plugins\useragreementtour\package.manifest" />
+    <None Include="App_Plugins\UserAgreementTour\user-agreement.controller.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +33,7 @@
 
   <ItemGroup>
     <Folder Include="App_Plugins\testBackofficeTour\backoffice\tours\" />
+    <Folder Include="App_Plugins\UserAgreementTour\backoffice\tours\" />
   </ItemGroup>
 
   <PropertyGroup>

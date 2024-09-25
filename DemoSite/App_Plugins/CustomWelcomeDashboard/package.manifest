@@ -9,6 +9,15 @@
                 { "deny": "translator" },
                 { "grant": "admin" }
             ]
+        },{
+            "alias": "testingDashboard",
+            "view":  "/App_Plugins/CustomWelcomeDashboard/WelcomeDashboard.html",
+            "sections":  [ "content" ],
+            "weight": -5,
+            "access": [
+                { "deny": "translator" },
+                { "grant": "admin" }
+            ]
         }
     ]
 }

@@ -1,0 +1,6 @@
+{
+	"javascript": [
+		"~/App_Plugins/UserAgreementTour/init.js",
+		"~/App_Plugins/UserAgreementTour/user-agreement.controller.js"
+	]
+}
