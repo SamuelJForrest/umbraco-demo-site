@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Backoffice Test Tour",
+    "alias": "testBackofficeTour",
+    "group": "Backoffice tests",
+    "groupOrder": 1,
+    "allowDisable": true,
+    "culture": "en-US",
+    "contentType": "",
+    "requiredSections": [ "content", "media", "settings" ],
+    "steps": [
+      {
+        "title": "Welcome to the Backoffice Test Tour",
+        "content": "<p>This is some demo text, it can change later</p>",
+        "type": null,
+        "element": "[data-element='welcome-dashboard'] h1",
+        "elementPreventClick": true,
+        "backdropOpacity": 0.7,
+        "event": "",
+        "view": null,
+        "eventElement": "",
+        "customProperties": null
+      },
+      {
+        "title": "The second step of the tour",
+        "content": "<p>This step highlights the button within my custom welcome dashboard.</p>",
+        "type": null,
+        "element": "[data-element='welcome-dashboard'] button",
+        "elementPreventClick": true,
+        "backdropOpacity": 0.7,
+        "event": "",
+        "view": null,
+        "eventElement": "",
+        "customProperties": null
+      }
+    ]
+  }
+]

@@ -4,14 +4,12 @@
 	Layout = null;
 }
 
-<header>
-    header
-</header>
+@await Html.PartialAsync("Shared/_head")
+
+@await Html.PartialAsync("Shared/_header")
 
 <main>
     @RenderBody()
 </main>
 
-<footer>
-    footer
-</footer>
+@await Html.PartialAsync("Shared/_footer")

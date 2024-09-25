@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IContentProperties, ITitleProperties
+	public partial class HomePage : PublishedContentModel, IBannerProperties, IContentProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,19 +50,35 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Banner Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bannerContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BannerContent => global::Umbraco.Cms.Web.Common.PublishedModels.BannerProperties.GetBannerContent(this, _publishedValueFallback);
+
+		///<summary>
+		/// Banner Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bannerLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link BannerLink => global::Umbraco.Cms.Web.Common.PublishedModels.BannerProperties.GetBannerLink(this, _publishedValueFallback);
+
+		///<summary>
+		/// Banner Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bannerTitle")]
+		public virtual string BannerTitle => global::Umbraco.Cms.Web.Common.PublishedModels.BannerProperties.GetBannerTitle(this, _publishedValueFallback);
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("content")]
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Content => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetContent(this, _publishedValueFallback);
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("title")]
-		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitleProperties.GetTitle(this, _publishedValueFallback);
 	}
 }

@@ -1,0 +1,23 @@
+﻿@model DemoSite.Models.ViewModels.BannerViewModel
+
+<section class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>@Model.Title</h1>
+
+                @if (Model.Content != null)
+                {
+                    <div class="banner-content">
+                        @Html.Raw(Model.Content)
+                    </div>
+                }
+
+                @if (Model.Link != null)
+                {
+                    <a href="@Model.Link.Url" class="btn btn-primary">@Model.Link.Name</a>
+                }
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section>
