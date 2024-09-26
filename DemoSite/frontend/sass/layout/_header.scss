@@ -1,0 +1,15 @@
+@use '../utils/' as util;
+
+.header {
+    @include util.sectionPadding(2);
+    background: util.$brand;
+    margin-bottom: 2.4rem;
+
+    &-logo {
+        @include util.underline(util.$light);
+        color: util.$light;
+        font-weight: util.$font-medium;
+        font-size: util.rem(24);
+        text-decoration: none;
+    }
+}

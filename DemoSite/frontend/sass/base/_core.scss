@@ -1,0 +1,11 @@
+@use '../utils' as util;
+
+body {
+    color: util.$darkest;
+    font-family: util.$font-family;
+}
+
+a {
+    color: util.$darkest;
+    transition: all util.$transition-fast;
+}

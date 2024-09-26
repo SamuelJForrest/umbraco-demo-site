@@ -1,0 +1,22 @@
+{
+  "name": "demo-site",
+  "version": "1.0.0",
+  "description": "A place to experiment with new development techniques",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ts": "tsc --watch",
+    "build:sass": "sass --watch sass/main.scss:../wwwroot/css/main.css",
+    "build": "concurrently \"npm run build:ts\" \"npm run build:sass\""
+  },
+  "author": "sam forrest",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "sass": "^1.79.3",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

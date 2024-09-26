@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "../wwwroot/js",
+    "module": "commonjs",
+    "target": "ES6",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": [ "ts/**/*.ts" ],
+  "exclude": ["node_module"]
+}
