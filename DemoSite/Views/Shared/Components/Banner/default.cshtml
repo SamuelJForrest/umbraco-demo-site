@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>@Model.Title</h1>
+                <h1 class="banner-title">@Model.Title</h1>
 
                 @if (Model.Content != null)
                 {
@@ -15,7 +15,7 @@
 
                 @if (Model.Link != null)
                 {
-                    <a href="@Model.Link.Url" class="btn btn-primary">@Model.Link.Name</a>
+                    <a href="@Model.Link.Url" class="banner-link">@Model.Link.Name</a>
                 }
             </div><!-- col -->
         </div><!-- row -->

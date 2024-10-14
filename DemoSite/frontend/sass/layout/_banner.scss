@@ -1,0 +1,18 @@
+@use '../utils' as ut;
+@use '../components/button';
+
+.banner {
+    margin-bottom: ut.rem(48);
+
+    &-title {
+        margin-bottom: ut.rem(16);
+    }
+
+    &-content {
+        margin-bottom: ut.rem(16);
+    }
+
+    &-link {
+        @extend .button;
+    }
+}

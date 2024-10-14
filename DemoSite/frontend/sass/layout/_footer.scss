@@ -1,0 +1,6 @@
+@use '../utils' as ut;
+
+.footer {
+    background: ut.$brand;
+    padding: 32px 0;
+}

@@ -1,0 +1,19 @@
+@use '../utils' as ut;
+@use 'sass:color';
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    background: ut.$brand;
+    font-size: ut.rem(18);
+    padding: 13px 18px;
+    color: ut.$light;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all ut.$transition-fast;
+
+    &:hover,
+    &:focus {
+        background: color.adjust(ut.$brand, $lightness: -10%);
+    }
+}

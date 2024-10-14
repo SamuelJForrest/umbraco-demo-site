@@ -3,10 +3,13 @@
 @import '../../node_modules/gridstack/dist/gridstack.min.css';
 
 .grid {
+    &-title {
+        margin-bottom: 16px;
+    }
+
     &-stack {
         background: var.$mid;
         margin-bottom: 2.4rem;
-        padding: 1rem;
         border-radius: .8rem;
 
         &-item {
