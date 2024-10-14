@@ -1,0 +1,26 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits UmbracoViewPage<ListingPage>
+@{
+    Layout = "Master.cshtml";
+}
+
+@await Component.InvokeAsync("Banner")
+
+@if (Model.ChildPages != null && Model.ChildPages.Any())
+{
+    <section class="listing">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="visually-hidden">All Children of @Model.Name</h2>
+                    <ul class="listing-list">
+                        @foreach (IPublishedContent child in Model.ChildPages)
+                        {
+                            @await Component.InvokeAsync("ListItem", child)
+                        }
+                    </ul>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </section>
+}

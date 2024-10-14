@@ -6,6 +6,10 @@
 
     &-title {
         margin-bottom: ut.rem(16);
+
+        &:only-child {
+            margin-bottom: 0;
+        }
     }
 
     &-content {

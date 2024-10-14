@@ -4,7 +4,8 @@
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-weight: ut.$font-medium;
     line-height: 1.4;
 }
@@ -30,5 +31,13 @@ h3 {
 
     @media screen and (min-width: ut.$lg) {
         font-size: ut.rem(32);
+    }
+}
+
+h4 {
+    font-size: ut.rem(20);
+
+    @media screen and (min-width: ut.$lg) {
+        font-size: ut.rem(24);
     }
 }

@@ -1,0 +1,16 @@
+﻿@model DemoSite.Models.ViewModels.ListItemViewModel
+
+<li class="listing-item">
+    <article>
+        <h3 class="listing-title">
+            <a href="@Model.Link">@Model.Title</a>
+        </h3>
+
+        @if (Model.Content != null && !string.IsNullOrWhiteSpace(Model.Content.ToString()))
+        {
+            <div class="listing-content">
+                @Html.Raw(Model.Content)
+            </div>
+        }
+    </article>
+</li>

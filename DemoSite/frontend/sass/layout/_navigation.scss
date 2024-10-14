@@ -30,6 +30,7 @@
         >a,
         >button {
             cursor: pointer;
+            display: inline-block;
             background: none;
             font-size: 1rem;
             font-weight: var.$font-medium;
@@ -37,7 +38,7 @@
             color: var.$light;
             text-decoration: underline;
             text-underline-offset: 4px;
-            padding: 1.2rem 2rem;
+            padding: 1.4rem 2rem;
             transition: all var.$transition-fast;
 
             &:hover,
@@ -62,7 +63,7 @@
         &--dropdown {
             >a {
                 color: var.$light;
-                padding: 1rem 1.2rem;
+                padding: 1.2rem;
                 display: block;
 
                 &:hover,
