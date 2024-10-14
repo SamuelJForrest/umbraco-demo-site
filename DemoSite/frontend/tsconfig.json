@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "../wwwroot/js",
-    "module": "commonjs",
     "target": "ES6",
+    "module": "ESNext",
     "strict": true,
     "esModuleInterop": true
   },

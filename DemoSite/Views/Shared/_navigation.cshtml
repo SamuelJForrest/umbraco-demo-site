@@ -1,0 +1,55 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var siteRoot = Model.GetSiteRoot();
+}
+
+@if (siteRoot != null)
+{
+    <nav class="nav">
+        @if (siteRoot.NavigationItems?.Any() == true)
+        {
+            <ul class="nav-list">
+                @foreach (MainMenuItem item in siteRoot.NavigationItems)
+                {
+                    <li class="nav-item">
+                        @if (item.Link != null)
+                        {
+                            <a href="@item.Link.Url" class="nav-link">
+                                @(!string.IsNullOrWhiteSpace(item.Title) ? item.Title : item.Link.Name)
+                            </a>
+                            @if (item.ChildLinks?.Any() == true)
+                            {
+                                <ul class="nav-list--dropdown">
+                                    @foreach (SubMenuItem child in item.ChildLinks)
+                                    {
+                                        <li class="nav-item--dropdown">
+                                            <a href="@child.Url?.Url" class="nav-link--dropdown">@child.Title</a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        }
+                        else
+                        {
+                            <button class="nav-link">
+                                @item.Title
+                            </button>
+                            @if (item.ChildLinks?.Any() == true)
+                            {
+                                <ul class="nav-list--dropdown">
+                                    @foreach (SubMenuItem child in item.ChildLinks)
+                                    {
+                                        <li class="nav-item--dropdown">
+                                            <a href="@child.Url?.Url" class="nav-link--dropdown">@child.Title</a>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        }
+                    </li>
+                }
+            </ul>
+        }
+    </nav>
+}

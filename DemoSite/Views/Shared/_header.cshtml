@@ -1,9 +1,13 @@
 ﻿<header class="header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 d-flex align-items-center">
                 <a class="header-logo" href="/">Demo site</a>
             </div><!-- col -->
+
+            <div class="col-lg-6">
+                @await Html.PartialAsync("Shared/_navigation")
+            </div>
         </div><!-- row -->
     </div><!-- container -->
 </header>

@@ -1,0 +1,26 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.GridPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+<div class="grid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="grid-stack">
+                    @if (Model.GridItems != null && Model.GridItems.Any())
+                    {
+                        foreach (GridStackItem gridStackItem in Model.GridItems)
+                        {
+                            <div class="grid-stack-item" gs-min-w="2" gs-min-h="2" gs-w="@(gridStackItem.Width > 1 ? gridStackItem.Width : 1)" gs-h="@(gridStackItem.Height > 1 ? gridStackItem.Height : 1)">
+                                <div class="grid-stack-item-content">@gridStackItem.Title</div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>

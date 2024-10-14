@@ -1,6 +1,11 @@
 ﻿<div ng-controller="UserAgreementTourController as vm" class="umb-email-marketing">
 
     <umb-tour-step hide-close="true">
+        <style>
+            .btn[disabled="disabled"] {
+                cursor: not-allowed !important;
+            }
+        </style>
 
         <h2>{{ model.currentStep.title }}</h2>
 
@@ -8,32 +13,33 @@
             <!-- HTML Content stored in tour JSON config file -->
             <div class="primary">
                 <div ng-bind-html="model.currentStep.content"></div>
+
+                <p class="notice">Before you can continue, please read the <a href="https://umbraco.com/about-us/privacy/" target="_blank" ng-click="vm.hasReadTerms=!vm.hasReadTerms">terms and conditions</a>. Then, click 'Accept Terms'.</p>
             </div>
 
             <!-- Secondary Column with paperplane -->
             <div class="secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 220 1080 640">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: #fba0a2;
-                            }
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" width="1000" height="1000" x="0" y="0" style="enable-background:new 0 0 750 750" version="1.1" viewBox="0 0 512 512">
+                    <style>
+                        .st0 {
+                            fill: #231f20
+                        }
 
-                            .cls-2 {
-                                fill: #3544b1;
-                            }
-                        </style>
-                    </defs>
-                    <title>paperplane</title>
-                    <g id="Layer_54" data-name="Layer 54"><polygon class="cls-1" points="1012.92 370.19 894.84 709.81 832.53 529.1 691.24 457.68 1012.92 370.19" /><polygon class="cls-2" points="1012.92 370.19 832.53 529.1 894.84 709.81 1012.92 370.19" /><path class="cls-2" d="M784.24,590.07s-34.16,66.82-88,70.95l-11.65-32s46.67-12.34,79.51-42.3Z" /><path class="cls-2" d="M633.49,670s-66.81,25.65-94.62,7l-3.5-26s35.92,19.8,79.74-9.67Z" /><path class="cls-2" d="M475.1,673.19S405.19,650.45,383,623.94l4.21-15.08,95.94,33.81Z" /><path class="cls-2" d="M311.51,601.88s-36.8-46.78-77.3-41.65l3.14-21.17s36.46-21.71,82.28,31.89Z" /><path class="cls-2" d="M183.21,562.23S119,565.32,89.29,588.69L67.08,569.22s61.6-41.75,103.69-36.05Z" /></g>
+                        .st2 {
+                            fill: #fff
+                        }
+                    </style>
+                    <path d="M128 477.8 0 256 128 34.2h256L512 256 384 477.8z" class="st0" />
+                    <path d="M152.6 435.1 49.2 256 152.6 76.9h206.8L462.8 256 359.4 435.1z" style="fill:#fdb913" />
+                    <path d="M154.8 431.4h202.5L458.5 256 357.2 80.6H154.8L53.5 256l101.3 175.4zm206.7 7.5h-211L44.9 256l1.1-1.9 104.5-181h211.1l1.1 1.9 104.5 181-105.7 182.9z" class="st2" />
+                    <path d="M226.3 172.4h59.2l31.6-79.3 85.5 173.8-92.5 54.7-29.7 97.3h-48.8L202 321.4l-92.6-54.5 85.4-173.8z" class="st0" />
+                    <path d="m238.5 279.4-43.6-46.8v46.8h43.6zm78.6-46.8v46.8h-43.7l43.7-46.8z" class="st2" />
                 </svg>
             </div>
         </div>
 
         <div class="cta">
-            <!--<umb-button size="m" button-style="link" type="button" label="No thanks" action="model.disableTour()"></umb-button>-->
-            <umb-button size="m" button-style="action" type="button" action="vm.optIn()" label="Keep me updated!"></umb-button>
-            <umb-button size="m" button-style="warning" type="button" action="vm.triggerAlert()" label="DO NOT CLICK!"></umb-button>
+            <umb-button size="m" button-style="action" type="button" action="vm.optIn()" label="Accept Terms" disabled="!vm.hasReadTerms"></umb-button>
         </div>
 
     </umb-tour-step>

@@ -9,3 +9,8 @@ a {
     color: util.$darkest;
     transition: all util.$transition-fast;
 }
+
+button {
+    font-family: util.$font-family;
+    text-align: left;
+}

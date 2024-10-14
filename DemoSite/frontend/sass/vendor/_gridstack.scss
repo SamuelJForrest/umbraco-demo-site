@@ -1,0 +1,25 @@
+@use '../utils/variables' as var;
+@use 'sass:color';
+@import '../../node_modules/gridstack/dist/gridstack.min.css';
+
+.grid {
+    &-stack {
+        background: var.$mid;
+        margin-bottom: 2.4rem;
+        padding: 1rem;
+        border-radius: .8rem;
+
+        &-item {
+            &-content {
+                background: color.adjust(var.$brand, $lightness: -25%);
+                border-radius: .4rem;
+                color: var.$light;
+                padding: 1rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

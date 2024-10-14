@@ -4,19 +4,24 @@
   "description": "A place to experiment with new development techniques",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ts": "tsc --watch",
-    "build:sass": "sass --watch sass/main.scss:../wwwroot/css/main.css",
-    "build": "concurrently \"npm run build:ts\" \"npm run build:sass\""
+    "test": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --watch"
   },
   "author": "sam forrest",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^9.0.1",
-    "sass": "^1.79.3",
-    "typescript": "^5.6.2"
+    "sass": "^1.79.5",
+    "typescript": "^5.6.3"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "css-loader": "^7.1.2",
+    "gridstack": "^10.3.1",
+    "sass-loader": "^16.0.2",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   }
 }

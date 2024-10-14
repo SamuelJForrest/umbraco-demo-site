@@ -4,27 +4,26 @@
     function UserAgreementTourController($scope, userService, $http) {
 
         var vm = this;
+        vm.hasReadTerms = false;
 
         vm.optIn = function () {
-            // Get the current user in backoffice
             userService.getCurrentUser().then(function (user) {
-                // Send this user along to opt in
-                // It's a fire & forget - not sure we need to check the response
-                console.log(user);
-                $http.get("https://google.com")
-                    .then(function (response) {
-                        console.log(response);
+
+                var userAgreement = {
+                    userId: user.id,
+                    email: user.email,
+                    tourName: "User Agreement Tour",
+                    lastUpdated: new Date()
+                };
+
+                $http.post("/umbraco/api/UserAgreementTourApi/PostUserAgreement", userAgreement)
+                    .catch(function (error) {
+                        console.log('Something went wrong');
+                        console.error(error);
                     });
             });
 
-            // Mark Tour as complete
-            // This is also can help us indicate that the user accepted
-            // Where disabled is set if user closes modal or chooses NO
             $scope.model.completeTour();
-        }
-
-        vm.triggerAlert = () => {
-            alert("You clicked the button");
         }
     }
 

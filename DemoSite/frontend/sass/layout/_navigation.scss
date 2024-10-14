@@ -1,0 +1,76 @@
+@use '../utils/variables' as var;
+@use "sass:color";
+
+.nav {
+    &-list {
+        display: flex;
+        align-items: center;
+        
+        @media screen and (min-width: var.$lg) {
+            justify-content: flex-end;
+        }
+
+        &--dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            background: color.adjust(var.$brand, $lightness: -10%);
+
+            @media screen and (min-width: var.$lg) {
+                width: 16rem;
+            }
+        }
+    }
+
+    &-item {
+        position: relative;
+
+        >a,
+        >button {
+            cursor: pointer;
+            background: none;
+            font-size: 1rem;
+            font-weight: var.$font-medium;
+            border: none;
+            color: var.$light;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            padding: 2rem;
+            transition: all var.$transition-fast;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+            >a,
+            >button {
+                background: color.adjust(var.$brand, $lightness: -10%);
+            }
+
+            .nav-list--dropdown {
+                display: block;
+            }
+        }
+
+        &--dropdown {
+            >a {
+                color: var.$light;
+                padding: 1rem 1.2rem;
+                display: block;
+
+                &:hover,
+                &:focus {
+                    background: color.adjust(var.$brand, $lightness: -20%);;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,2 @@
-console.log('testing');
+import '../sass/main.scss';
+
