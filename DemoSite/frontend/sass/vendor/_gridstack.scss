@@ -25,4 +25,46 @@
             }
         }
     }
+
+    &-tray {
+        background: color.adjust(var.$brand, $lightness: -25%);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(100%);
+        transition: all var.$transition-fast ease-in-out;
+
+        &.__active {
+            transform: translateY(0);
+        }
+
+        &-button {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            background: color.adjust(var.$brand, $lightness: -25%);
+            border: none;
+            height: 80px;
+            width: 160px;
+            border-radius: 100px 100px 0 0;
+            color: var.$light;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 16px;
+        }
+
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 24px 0;
+            color: var.$light;
+        }
+    }
 }

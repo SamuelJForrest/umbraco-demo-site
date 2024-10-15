@@ -57,6 +57,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual int Height => this.Value<int>(_publishedValueFallback, "height");
 
 		///<summary>
+		/// No Movement
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
+		[ImplementPropertyType("noMovement")]
+		public virtual bool NoMovement => this.Value<bool>(_publishedValueFallback, "noMovement");
+
+		///<summary>
+		/// No Resize
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
+		[ImplementPropertyType("noResize")]
+		public virtual bool NoResize => this.Value<bool>(_publishedValueFallback, "noResize");
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]

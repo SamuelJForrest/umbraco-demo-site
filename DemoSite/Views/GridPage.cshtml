@@ -21,8 +21,8 @@
                     {
                         foreach (GridStackItem gridStackItem in Model.GridItems)
                         {
-                            <div class="grid-stack-item" gs-min-w="2" gs-min-h="2" gs-w="@(gridStackItem.Width > 1 ? gridStackItem.Width : 1)" gs-h="@(gridStackItem.Height > 1 ? gridStackItem.Height : 1)">
-                                <div class="grid-stack-item-content">@gridStackItem.Title</div>
+                            <div class="grid-stack-item" gs-min-w="2" gs-min-h="2" gs-w="@(gridStackItem.Width > 1 ? gridStackItem.Width : 1)" gs-h="@(gridStackItem.Height > 1 ? gridStackItem.Height : 1)" gs-no-resize="@gridStackItem.NoResize" gs-no-move="@gridStackItem.NoMovement" gs-locked="@gridStackItem.NoMovement">
+                                <div class="grid-stack-item-content">@gridStackItem.Title @(gridStackItem.NoMovement ? "(Immovable)" : string.Empty)</div>
                             </div>
                         }
                     }
@@ -30,6 +30,24 @@
             </div><!-- col -->
         </div><!-- row -->
     </div><!-- container -->
+
+    <div class="grid-tray">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button class="grid-tray-button gridTrayToggle">Open tray</button>
+
+                    <div class="grid-tray-wrap">
+                        <div>Option 1</div>
+                        <div>Option 2</div>
+                        <div>Option 3</div>
+                        <div>Option 4</div>
+                        <div>Option 5</div>
+                    </div>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
 </div>
 
-<opta-widget sport="football" widget="standings" template="normal" live="false" competition="8" season="2015" match="" team="" team_padding="" navigation="" default_nav="1" side="combined" data_detail="default" dividers="" show_key="false" show_crests="false" points_in_first_column="false" show_form="6" group="" crop="" competition_naming="full" team_naming="full" team_link="" date_format="dddd D MMMM YYYY" sorting="false" show_logo="true" breakpoints="400"></opta-widget>
+@* <opta-widget sport="football" widget="standings" template="normal" live="false" competition="8" season="2015" match="" team="" team_padding="" navigation="" default_nav="1" side="combined" data_detail="default" dividers="" show_key="false" show_crests="false" points_in_first_column="false" show_form="6" group="" crop="" competition_naming="full" team_naming="full" team_link="" date_format="dddd D MMMM YYYY" sorting="false" show_logo="true" breakpoints="400"></opta-widget> *@
