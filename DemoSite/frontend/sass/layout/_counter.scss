@@ -1,0 +1,26 @@
+@use '../utils' as ut;
+@use '../base/typography';
+
+.counter {
+    margin-bottom: ut.rem(40);
+
+    &-wrap {
+        @include ut.reactComponentWrap
+    }
+
+    &-title {
+        @extend h3;
+        margin-bottom: 24px;
+    }
+
+    &-text {
+        font-size: ut.rem(32);
+        margin-bottom: 24px;
+    }
+
+    &-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

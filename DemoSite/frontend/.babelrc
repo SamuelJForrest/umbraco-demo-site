@@ -1,0 +1,8 @@
+{
+    "presets": [
+        "@babel/preset-env", // Transpile ES6+ syntax to ES5
+        "@babel/preset-react", // Handle JSX for React
+        "@babel/preset-typescript" // Enable TypeScript support
+    ]
+}
+  

@@ -3,8 +3,18 @@
     "target": "ES6",
     "module": "ESNext",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
   },
-  "include": [ "ts/**/*.ts" ],
+  "include": [ 
+    "ts/**/*.ts",
+    "ts/**/*.tsx"
+  ],
   "exclude": ["node_module"]
 }

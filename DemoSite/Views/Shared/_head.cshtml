@@ -7,5 +7,25 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    @if (Model is ReactPage reactPage)
+    {
+        <script>
+            window.currentPageGuid = '@Model.Key';
+        </script>
+    }
+
+    @if (Model is GridPage gridPage)
+    {
+        <link rel="stylesheet" href="https://secure.widget.cloud.opta.net/v3/css/v3.football.opta-widgets.css">
+        <script src="https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js"></script>
+        <script>
+            var opta_settings = {
+                subscription_id: '1b5f257053d402329d23c4f96dc22d2a',
+                language: 'en_GB',
+                timezone: 'Europe/London'
+            };
+        </script>
+    }
+
     <title>@Model.Name</title>
 </head>

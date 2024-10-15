@@ -4,6 +4,7 @@ module.exports = {
     entry: {
         main: './ts/main.ts',
         gridStack: './ts/partials/grid-stack.ts',
+        reactPage: './ts/partials/react-page.tsx'
     },
     output: {
         filename: '[name].js',
@@ -18,6 +19,16 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.tsx?$/, // Match TypeScript files
+                use: 'babel-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.jsx?$/, // Match JavaScript/JSX files
+                use: 'babel-loader',
+                exclude: /node_modules/
+            },
+            {
                 // Rule for handling SCSS
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
@@ -25,7 +36,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js', '.tsx', '.jsx']
     },
     mode: 'development',
     stats: {

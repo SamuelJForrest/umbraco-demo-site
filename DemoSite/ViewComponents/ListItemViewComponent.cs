@@ -17,7 +17,6 @@ namespace DemoSite.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(IPublishedContent page)
         {
-
             if (page == null)
             {
                 return Content(string.Empty);

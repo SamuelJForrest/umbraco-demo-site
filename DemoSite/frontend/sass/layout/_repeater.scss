@@ -1,0 +1,39 @@
+@use '../utils' as ut;
+@use '../base/typography';
+
+.repeater {
+    margin-bottom: ut.rem(40);
+
+    &-wrap {
+        @include ut.reactComponentWrap
+    }
+
+    &-titlewrap {
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    &-title {
+        @extend h3;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    &-item {
+        aspect-ratio: 1;
+        background: ut.$brand;
+        color: ut.$light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        border-radius: 8px;
+    }
+}

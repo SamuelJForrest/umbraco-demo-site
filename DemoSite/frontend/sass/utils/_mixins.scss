@@ -42,3 +42,9 @@
         }
     }
 }
+
+@mixin reactComponentWrap {
+    padding: 40px;
+    border: 2px solid var.$brand;
+    border-radius: 4px;
+}
