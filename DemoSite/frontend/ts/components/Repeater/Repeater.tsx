@@ -9,7 +9,11 @@ const Repeater : React.FC<RepeaterProps> = ({ title }) => {
     const [repeatCount, setRepeatCount] = useState<number>(1);
 
     const incrementRepeater = () => {
-        setRepeatCount(prevState => prevState + 1);
+        setRepeatCount((prevState: number) => prevState + 1); // Explicitly typed prevState
+    }
+
+    const decrementRepeater = () => {
+        setRepeatCount((prevState: number) => prevState - 1); // Explicitly typed prevState
     }
 
     return (
@@ -25,7 +29,7 @@ const Repeater : React.FC<RepeaterProps> = ({ title }) => {
 
                             <div className="repeater-grid">
                                 { Array.from({ length: repeatCount }, (_, index) => (
-                                    <p className="repeater-item" key={index}>Item { index }</p>
+                                    <button className="repeater-item" key={index} onClick={decrementRepeater}>Item { index }</button>
                                 )) }
                             </div>
                         </div>
