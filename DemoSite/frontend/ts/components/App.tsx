@@ -15,7 +15,7 @@ type DataType = {
     }
 }
 
-const App : React.FC = () => {
+const App = () => {
     const [data, setData] = useState<DataType | null>(null);
     const currentPageGuid = window.currentPageGuid;
 
@@ -27,7 +27,7 @@ const App : React.FC = () => {
                     throw new Error('Network response was not okay');
                 }
 
-                const result = await response.json();
+                const result : DataType = await response.json();
                 console.log(result.properties.reactBlocks);
                 setData(result);
             }

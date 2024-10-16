@@ -26,6 +26,11 @@
                             </div>
                         }
                     }
+
+                    <!-- static center column -->
+                    <div class="grid-stack-item" gs-min-w="6" gs-min-h="6" gs-x="3" gs-y="0" gs-no-resize="true" gs-no-move="true">
+                        <div class="grid-stack-item-content">Center grid item</div>
+                    </div>
                 </div>
             </div><!-- col -->
         </div><!-- row -->
@@ -38,11 +43,10 @@
                     <button class="grid-tray-button gridTrayToggle">Open tray</button>
 
                     <div class="grid-tray-wrap">
-                        <div>Option 1</div>
-                        <div>Option 2</div>
-                        <div>Option 3</div>
-                        <div>Option 4</div>
-                        <div>Option 5</div>
+                        <div class="grid-stack-item" gs-min-w="2" gs-min-h="3">
+                            <div class="grid-stack-item-content">Option 1</div>
+                        </div>
+                        <div class="grid-tray-trash">Remove Widget</div>
                     </div>
                 </div><!-- col -->
             </div><!-- row -->

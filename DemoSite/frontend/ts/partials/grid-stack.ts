@@ -2,8 +2,12 @@ import '../../sass/vendor/_gridstack.scss';
 import { GridStack } from "../../node_modules/gridstack/dist/gridstack";
 
 let grid = GridStack.init({
-    removable: true
+    removable: '.grid-tray-trash',
+    // float: true,
+    acceptWidgets: function(el) { return true },
 });
+
+GridStack.setupDragIn('.grid-tray .grid-stack-item');
 
 const gridTray = document.querySelector('.grid-tray');
 const gridTrayToggle = document.querySelector('.gridTrayToggle') as HTMLButtonElement;

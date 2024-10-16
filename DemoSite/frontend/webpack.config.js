@@ -40,6 +40,8 @@ module.exports = {
     },
     mode: 'development',
     stats: {
-        warnings: false
-    }
+        warnings: false,
+        errorDetails: true,
+    },
+    cache: false,
 }

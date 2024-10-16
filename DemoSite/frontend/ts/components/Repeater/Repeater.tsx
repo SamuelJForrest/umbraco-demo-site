@@ -9,11 +9,11 @@ const Repeater : React.FC<RepeaterProps> = ({ title }) => {
     const [repeatCount, setRepeatCount] = useState<number>(1);
 
     const incrementRepeater = () => {
-        setRepeatCount((prevState: number) => prevState + 1); // Explicitly typed prevState
+        setRepeatCount((prevState) => prevState + 1);
     }
 
     const decrementRepeater = () => {
-        setRepeatCount((prevState: number) => prevState - 1); // Explicitly typed prevState
+        setRepeatCount((prevState) => prevState - 1);
     }
 
     return (

@@ -4,8 +4,8 @@
   "description": "A place to experiment with new development techniques",
   "main": "index.js",
   "scripts": {
-    "test": "webpack --config webpack.config.js",
-    "build": "webpack --config webpack.config.js --watch"
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch"
   },
   "author": "sam forrest",
   "license": "ISC",

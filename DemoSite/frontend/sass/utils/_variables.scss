@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // color variables
 $brand: #5748AE;
 $darkest: #0C121C;
@@ -5,6 +7,9 @@ $dark: #1E293B;
 $mid: #B8BFC6;
 $light: #D6DEE7;
 $lightest: #FCFCFC;
+
+$warning: #E34A32;
+$warning-hover: color.adjust($warning, $lightness: -15%);
 
 // breakpoint variables
 $sm: 576px;
