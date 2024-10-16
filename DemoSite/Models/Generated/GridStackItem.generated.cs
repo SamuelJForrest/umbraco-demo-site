@@ -50,13 +50,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Alignment
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
-		[ImplementPropertyType("alignment")]
-		public virtual global::DemoSite.Enums.GridStackAlignment Alignment => this.Value<global::DemoSite.Enums.GridStackAlignment>(_publishedValueFallback, "alignment");
-
-		///<summary>
 		/// Height
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
