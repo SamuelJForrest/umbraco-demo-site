@@ -50,12 +50,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Grid Items
+		/// Grid Options: Select the widgets you wish to display.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("gridItems")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedElement> GridItems => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedElement>>(_publishedValueFallback, "gridItems");
+		[ImplementPropertyType("gridOptions")]
+		public virtual global::System.Collections.Generic.List<global::DemoSite.Enums.GridStackWidgets> GridOptions => this.Value<global::System.Collections.Generic.List<global::DemoSite.Enums.GridStackWidgets>>(_publishedValueFallback, "gridOptions");
 
 		///<summary>
 		/// Grid Title

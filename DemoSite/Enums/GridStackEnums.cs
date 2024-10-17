@@ -1,8 +1,11 @@
 ﻿namespace DemoSite.Enums
 {
-    public enum GridStackAlignment
+    public enum GridStackWidgets
     {
-        Left,
-        Right
+        Commentary,
+        Fixtures,
+        MatchPreview,
+        MatchSats,
+        Standings,
     }
 }

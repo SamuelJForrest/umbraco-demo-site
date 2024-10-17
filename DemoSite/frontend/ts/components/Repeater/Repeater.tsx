@@ -28,9 +28,15 @@ const Repeater : React.FC<RepeaterProps> = ({ title }) => {
                             </div>
 
                             <div className="repeater-grid">
-                                { Array.from({ length: repeatCount }, (_, index) => (
-                                    <button className="repeater-item" key={index} onClick={decrementRepeater}>Item { index }</button>
-                                )) }
+                                { repeatCount >= 1 && (
+                                    Array.from({ length: repeatCount }, (_, index) => (
+                                        <button className="repeater-item" key={index} onClick={decrementRepeater}>Item { index }</button>
+                                    ))
+                                )}
+
+                                { repeatCount < 1 && (
+                                    <p>You've deleted all the items you sausage</p>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,23 @@
+@use '../utils' as ut;
+
+.Opta {
+    >.Opta_W {
+        margin: 0;
+
+        >div {
+            padding: 0;
+        }
+    }
+
+    h2 {
+        background: ut.$brand;
+    }
+
+    tr.Opta-highlight {
+        th,
+        td {
+            background-color: ut.$brand !important;
+            color: ut.$light;
+        }
+    }
+}

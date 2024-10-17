@@ -4,6 +4,9 @@ import { GridStack } from "../../node_modules/gridstack/dist/gridstack";
 let grid = GridStack.init({
     removable: '.grid-tray-trash',
     // float: true,
+    // resizable: {
+    //     handles: 'all'
+    // },
     acceptWidgets: function(el) { return true },
 });
 

@@ -17,20 +17,60 @@
                 }
 
                 <div class="grid-stack">
-                    @if (Model.GridItems != null && Model.GridItems.Any())
+
+                    @if (Model.GridOptions != null)
                     {
-                        foreach (GridStackItem gridStackItem in Model.GridItems)
+                        @if (Model.GridOptions.Contains(DemoSite.Enums.GridStackWidgets.Commentary))
                         {
-                            <div class="grid-stack-item" gs-min-w="2" gs-min-h="2" gs-w="@(gridStackItem.Width > 1 ? gridStackItem.Width : 1)" gs-h="@(gridStackItem.Height > 1 ? gridStackItem.Height : 1)" gs-no-resize="@gridStackItem.NoResize" gs-no-move="@gridStackItem.NoMovement" gs-locked="@gridStackItem.NoMovement">
-                                <div class="grid-stack-item-content">@gridStackItem.Title @(gridStackItem.NoMovement ? "(Immovable)" : string.Empty)</div>
+                            <!-- commentary widget -->
+                            <div class="grid-stack-item" gs-min-w="6" gs-min-h="6" gs-x="3" gs-y="0" gs-no-resize="true" gs-no-move="true" gs-locked="true">
+                                <div class="grid-stack-item-content">
+                                    <opta-widget widget="commentary" competition="8" season="2024" match="2444471" template="normal" live="true" data_type="auto" order_by="time_ascending" show_event_icons="true" show_minor_events="true" fixed_height_comments="0" show_live="false" show_logo="true" show_title="false" sport="football"></opta-widget>
+                                </div>
+                            </div>
+                        }
+
+                        @if (Model.GridOptions.Contains(DemoSite.Enums.GridStackWidgets.Fixtures))
+                        {
+                            <!-- fixtures widget -->
+                            <div class="grid-stack-item" gs-min-w="3" gs-min-h="3" gs-y="0">
+                                <div class="grid-stack-item-content">
+                                    <opta-widget widget="fixtures" competition="8" season="2024" team="39" template="normal" live="true" show_venue="false" match_status="all" grouping="month" show_grouping="true" limit="10" navigation="none" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" month_date_format="MMMM" competition_naming="abbr" team_naming="abbr" pre_match="false" show_live="false" show_logo="true" show_title="true" sport="football"></opta-widget>
+                                </div>
+                            </div>
+                        }
+
+                        @if (Model.GridOptions.Contains(DemoSite.Enums.GridStackWidgets.MatchPreview))
+                        {
+                            <!-- match preview widget -->
+                            <div class="grid-stack-item" gs-min-w="3" gs-min-h="3" gs-y="0">
+                                <div class="grid-stack-item-content">
+                                    <opta-widget widget="match_preview" competition="8" season="2024" match="2444603" template="normal" navigation="tabs" default_nav="1" show_match_header="true" show_crests="true" show_competition_name="true" show_venue="true" show_date="true" date_format="dddd D MMMM YYYY" narrow_date_format="DD/MM/YY" time_format="HH:mm" show_form="0" show_fixtures="1" show_previous_meetings="1" show_top_scorers="1" show_tied_scorers="true" show_images="false" competition_naming="brief" team_naming="brief" player_naming="initial" show_logo="true" show_title="true" sport="football"></opta-widget>
+                                </div>
+                            </div>
+                        }
+
+                        @if (Model.GridOptions.Contains(DemoSite.Enums.GridStackWidgets.MatchSats))
+                        {
+                            <!-- match stats widget -->
+                            <div class="grid-stack-item" gs-min-w="3" gs-min-h="3" gs-y="0">
+                                <div class="grid-stack-item-content">
+                                    <opta-widget widget="matchstats" competition="8" season="2024" match="2444471" template="lineups" live="false" side="away" column_count="1" side_by_side="false" show_match_header="false" show_score="true" show_halftime_score="true" show_crests="false" show_team_formation="false" show_competition_name="true" show_date="true" date_format="dddd D MMMM YYYY" narrow_date_format="DD/MM/YY" order_by="jersey" group_by_position="false" show_position="true" show_images="false" show_key="false" show_starters="true" show_goalkeepers="true" show_defenders="true" show_midfielders="true" show_forwards="true" show_subs="true" show_unused_subs="false" show_managers="true" show_captain="false" show_match_events="true" competition_naming="full" team_naming="full" player_naming="full" show_live="false" show_logo="true" show_title="true" sport="football"></opta-widget>
+                                </div>
+                            </div>
+                        }
+
+                        @if (Model.GridOptions.Contains(DemoSite.Enums.GridStackWidgets.Standings))
+                        {
+                            <!-- standings widget -->
+                            <div class="grid-stack-item" gs-min-w="3" gs-min-h="3" gs-y="0">
+                                <div class="grid-stack-item-content">
+                                    <opta-widget widget="standings" competition="8" season="2024" team="6" template="normal" live="true" team_padding="3" default_nav="1" side="home" data_detail="brief" dividers="1" show_key="false" show_crests="true" points_in_first_column="false" lose_before_draw="false" competition_naming="abbr" team_naming="abbr" date_format="dddd D MMMM YYYY" sorting="false" show_live="true" show_relegation_average="false" show_logo="true" show_title="true" breakpoints="0" sport="football"></opta-widget>
+                                </div>
                             </div>
                         }
                     }
 
-                    <!-- static center column -->
-                    <div class="grid-stack-item" gs-min-w="6" gs-min-h="6" gs-x="3" gs-y="0" gs-no-resize="true" gs-no-move="true">
-                        <div class="grid-stack-item-content">Center grid item</div>
-                    </div>
                 </div>
             </div><!-- col -->
         </div><!-- row -->
@@ -43,9 +83,12 @@
                     <button class="grid-tray-button gridTrayToggle">Open tray</button>
 
                     <div class="grid-tray-wrap">
-                        <div class="grid-stack-item" gs-min-w="2" gs-min-h="3">
-                            <div class="grid-stack-item-content">Option 1</div>
-                        </div>
+                        @for (int i = 0; i < 6; i++)
+                        {
+                            <div class="grid-stack-item" gs-min-w="3" gs-min-h="3">
+                                <div class="grid-stack-item-content --tray">Widget @(i + 1)</div>
+                            </div>
+                        }
                         <div class="grid-tray-trash">Remove Widget</div>
                     </div>
                 </div><!-- col -->
@@ -53,5 +96,3 @@
         </div><!-- container -->
     </div>
 </div>
-
-<opta-widget sport="football" widget="standings" template="normal" live="false" competition="8" season="2015" match="" team="" team_padding="" navigation="" default_nav="1" side="combined" data_detail="default" dividers="" show_key="false" show_crests="false" points_in_first_column="false" show_form="6" group="" crop="" competition_naming="full" team_naming="full" team_link="" date_format="dddd D MMMM YYYY" sorting="false" show_logo="true" breakpoints="400,700,1200"></opta-widget>

@@ -20,7 +20,7 @@
         @extend h3;
     }
 
-    &-grid {
+    &-grid:has(.repeater-item) {
         display: grid;
         grid-template-columns: repeat(8, minmax(0, 1fr));
         gap: 24px;
