@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Text Page</summary>
 	[PublishedModel("textPage")]
-	public partial class TextPage : PublishedContentModel, IBannerProperties, IContentProperties
+	public partial class TextPage : PublishedContentModel, IBannerProperties, IFlexibleBlocksProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -74,11 +74,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string BannerTitle => global::Umbraco.Cms.Web.Common.PublishedModels.BannerProperties.GetBannerTitle(this, _publishedValueFallback);
 
 		///<summary>
-		/// Content
+		/// Content Blocks
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("content")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Content => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetContent(this, _publishedValueFallback);
+		[ImplementPropertyType("contentBlocks")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel ContentBlocks => global::Umbraco.Cms.Web.Common.PublishedModels.FlexibleBlocksProperties.GetContentBlocks(this, _publishedValueFallback);
 	}
 }
