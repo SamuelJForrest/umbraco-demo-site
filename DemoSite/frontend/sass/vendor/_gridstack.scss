@@ -19,14 +19,6 @@
                 border-radius: .4rem;
                 color: ut.$light;
                 overflow: visible;
-                
-                &.--tray {
-                    padding: 1rem;
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
             }
         }
     }
@@ -43,6 +35,14 @@
 
         &.__active {
             transform: translateY(0);
+        }
+
+        .grid-stack-item-content {
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         &-button {
@@ -77,7 +77,6 @@
 
         &-trash {
             @extend .grid-stack-item-content;
-            @extend .--tray;
             cursor: default;
             margin-left: auto;
             background: ut.$warning;
