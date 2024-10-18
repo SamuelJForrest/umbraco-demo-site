@@ -5,24 +5,34 @@
     var settings = (ContentModels.FlexibleBlockSettings)Model.Settings;
 
     @if (settings.IsHidden) return;
+
+    string blockMargin = settings.BlockMargin switch
+    {
+        DemoSite.Enums.FlexibleBlockMargin.Small => "__smallmargin",
+        DemoSite.Enums.FlexibleBlockMargin.Medium => "__mediummargin",
+        DemoSite.Enums.FlexibleBlockMargin.Large => "__largemargin",
+        _ => ""
+    };
 }
 
-<section class="richtext">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                @if (!string.IsNullOrWhiteSpace(content.Title))
-                {
-                    <h2 class="richtext-title">@content.Title</h2>
-                }
+<div class="flexibleblock @(blockMargin)">
+    <section class="richtext">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @if (!string.IsNullOrWhiteSpace(content.Title))
+                    {
+                        <h2 class="richtext-title">@content.Title</h2>
+                    }
 
-                @if (!string.IsNullOrEmpty(content?.Content?.ToString()))
-                {
-                    <div class="richtext-content">
-                        @Html.Raw(content.Content)
-                    </div>
-                }
-            </div><!-- col -->
-        </div><!-- row -->
-    </div><!-- container -->
-</section>
+                    @if (!string.IsNullOrEmpty(content?.Content?.ToString()))
+                    {
+                        <div class="richtext-content">
+                            @Html.Raw(content.Content)
+                        </div>
+                    }
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </section>
+</div>
