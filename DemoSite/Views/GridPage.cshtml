@@ -16,36 +16,34 @@
                     <h2 class="grid-title">@Model.GridTitle</h2>
                 }
 
-                <button class="button mb-5 gridSaveBtn">Save grid</button>
+                <div class="grid-save mb-5">
+                    <button class="button gridSaveBtn">Save grid</button>
+                </div>
 
                 <div class="grid-stack">
-                    <!-- grid is populated by JavaScript (see grid-stack.ts) ->
-                        </div>
-                    </div><!-- col -->
-                </div><!-- row -->
-            </div><!-- container -->
+                    <!-- grid is populated by JavaScript (see frontend/ts/partials/grid-stack.ts) -->
+                </div>
 
-            @* <div class="grid-tray">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <button class="grid-tray-button gridTrayToggle">Open tray</button>
+                <div class="grid-tray">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="grid-tray-button gridTrayToggle">Open tray</button>
 
-                            <div class="grid-tray-wrap">
-                        @for (int i = 0; i < 3; i++)
-                        {
-                                    <div class="grid-stack-item" gs-min-w="3" gs-min-h="3">
+                                <div class="grid-tray-wrap">
+                                    <div class="grid-stack-item">
                                         <div class="grid-stack-item-content">
-                                            <opta-widget widget="standings" competition="8" season="2024" team="6" template="normal" live="true" team_padding="3" default_nav="1" side="home" data_detail="brief" dividers="1" show_key="false" show_crests="true" points_in_first_column="false" lose_before_draw="false" competition_naming="abbr" team_naming="abbr" date_format="dddd D MMMM YYYY" sorting="false" show_live="true" show_relegation_average="false" show_logo="true" show_title="true" breakpoints="310, 970, 1300" sport="football"></opta-widget>
+                                            <opta-widget widget="competition_stats" competition="8" season="2024" template="normal" show_crests="true" show_images="false" show_ranks="true" show_player_rankings="true" show_team_rankings="true" visible_stats="goals,shots,shots_on_target,passes,cards_yellow,cards_red" limit="2" team_naming="brief" player_naming="initial" show_logo="true" show_title="true" breakpoints="310, 970, 1300" sport="football"></opta-widget>
                                         </div>
                                     </div>
-                        }
-                                <div class="grid-tray-trash">Remove Widget</div>
-                            </div>
-                        </div><!-- col -->
-                    </div><!-- row -->
-                </div><!-- container -->
-            </div> *@
+
+                                    <div class="grid-tray-trash">Remove Widget</div>
+                                </div>
+                            </div><!-- col -->
+                        </div><!-- row -->
+                    </div><!-- container -->
+                </div>
+            </div><!-- row -->
         </div>
     </div>
 </div>

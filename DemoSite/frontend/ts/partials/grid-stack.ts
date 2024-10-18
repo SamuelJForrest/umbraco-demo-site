@@ -1,10 +1,11 @@
 import '../../sass/vendor/_gridstack.scss';
-import { GridStack, GridStackOptions, GridStackWidget } from "gridstack";
+import { GridStack } from "gridstack";
 import { commentaryWidget, fixturesWidget, standingsWidget } from '../widgets/opta';
 
 let grid = GridStack.init({
     removable: '.grid-tray-trash',
     acceptWidgets: function(el) { return true },
+    column: 4
 });
 
 let serializedGridData;
@@ -22,10 +23,10 @@ if (savedGridData) {
     serializedGridData = [
         {
             content: commentaryWidget,
-            x: 3,
+            x: 1,
             y: 0,
-            w: 6,
-            h: 9,
+            w: 2,
+            h: 2,
             noResize: true,
             noMove: true,
             locked: true,
@@ -34,15 +35,15 @@ if (savedGridData) {
             content: fixturesWidget,
             x: 0,
             y: 0,
-            w: 3,
-            h: 3,
+            w: 1,
+            h: 1,
         },
         {
             content: standingsWidget,
-            x: 9,
+            x: 3,
             y: 0,
-            w: 3,
-            h: 3,
+            w: 1,
+            h: 1,
         }
     ]
 }
@@ -53,7 +54,8 @@ GridStack.setupDragIn('.grid-tray .grid-stack-item');
 
 const gridTray = document.querySelector('.grid-tray');
 const gridTrayToggle = document.querySelector('.gridTrayToggle') as HTMLButtonElement;
-const gridSaveBtn = document.querySelector('.gridSaveBtn');
+const gridSaveWrap = document.querySelector('.grid-save') as HTMLDivElement;
+const gridSaveBtn = document.querySelector('.gridSaveBtn') as HTMLButtonElement;
 
 const toggleGridTray = () => {
     if (gridTray && gridTrayToggle) {
@@ -72,7 +74,13 @@ const saveGrid = () => {
 
     sessionStorage.setItem('gridData', JSON.stringify(serializedGridData));
 
-    console.log(serializedGridData);
+    if (gridSaveBtn) {
+        let savedMessage = document.createElement('p');
+        savedMessage.textContent = "Saved";
+        savedMessage.classList.add('grid-saved');
+
+        alert('Layout saved');
+    }
 }
 
 gridTrayToggle?.addEventListener('click', toggleGridTray);
