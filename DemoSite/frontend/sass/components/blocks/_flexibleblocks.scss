@@ -1,26 +1,26 @@
-@use '../utils' as ut;
+@use '../../utils' as ut;
 
 .flexibleblocks {
     .flexibleblock {
-        margin-bottom: 32px;
+        margin-bottom: 40px;
 
         @media screen and (min-width: ut.$lg) {
-            margin-bottom: 48px;
+            margin-bottom: 60px;
         }
 
         &.__smallmargin {
-            margin-bottom: 24px;
+            margin-bottom: 30px;
 
             @media screen and (min-width: ut.$lg) {
-                margin-bottom: 32px;
+                margin-bottom: 40px;
             }
         }
 
         &.__largemargin {
-            margin-bottom: 48px;
+            margin-bottom: 60px;
 
             @media screen and (min-width: ut.$lg) {
-                margin-bottom: 60px;
+                margin-bottom: 80px;
             }
         }
     }

@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @using DemoSite.Helpers;
 @{
-    var content = (ContentModels.RichTextBlock)Model.Content;
+    var content = (ContentModels.TwoColumnBlock)Model.Content;
     var settings = (ContentModels.FlexibleBlockSettings)Model.Settings;
 
     @if (settings.IsHidden) return;
@@ -11,18 +11,22 @@
 }
 
 <div class="flexibleblock @(blockMargin)">
-    <section class="richtext">
+    <section class="twocolumn">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    @if (!string.IsNullOrWhiteSpace(content.Title))
+                <div class="col-lg-6">
+                    @if (content.Image != null)
                     {
-                        <h2 class="richtext-title">@content.Title</h2>
+                        <div class="twocolumn-image">
+                            <img src="@content.Image.Url()" alt="@content.Image.Name" class="twocolumn-image" />
+                        </div>
                     }
+                </div><!-- col -->
 
-                    @if (!string.IsNullOrEmpty(content?.Content?.ToString()))
+                <div class="col-lg-6">
+                    @if (content.Content != null && !string.IsNullOrWhiteSpace(content.Content.ToString()))
                     {
-                        <div class="richtext-content">
+                        <div class="twocolumn-content">
                             @Html.Raw(content.Content)
                         </div>
                     }
