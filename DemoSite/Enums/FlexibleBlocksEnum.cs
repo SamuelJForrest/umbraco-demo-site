@@ -6,4 +6,10 @@
         Medium,
         Large,
     }
+
+    public enum TwoColumnAlignment
+    {
+        Left,
+        Right,
+    }
 }

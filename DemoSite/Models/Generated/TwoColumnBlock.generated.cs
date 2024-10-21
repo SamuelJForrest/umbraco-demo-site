@@ -50,6 +50,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Alignment: Select the side of the block you would like the image to appear on
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]
+		[ImplementPropertyType("alignment")]
+		public virtual global::DemoSite.Enums.TwoColumnAlignment Alignment => this.Value<global::DemoSite.Enums.TwoColumnAlignment>(_publishedValueFallback, "alignment");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.1+2e068bb")]

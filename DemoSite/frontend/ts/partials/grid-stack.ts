@@ -54,8 +54,7 @@ GridStack.setupDragIn('.grid-tray .grid-stack-item');
 
 const gridTray = document.querySelector('.grid-tray');
 const gridTrayToggle = document.querySelector('.gridTrayToggle') as HTMLButtonElement;
-const gridSaveWrap = document.querySelector('.grid-save') as HTMLDivElement;
-const gridSaveBtn = document.querySelector('.gridSaveBtn') as HTMLButtonElement;
+// const gridSaveBtn = document.querySelector('.gridSaveBtn') as HTMLButtonElement;
 
 const toggleGridTray = () => {
     if (gridTray && gridTrayToggle) {
@@ -74,14 +73,11 @@ const saveGrid = () => {
 
     sessionStorage.setItem('gridData', JSON.stringify(serializedGridData));
 
-    if (gridSaveBtn) {
-        let savedMessage = document.createElement('p');
-        savedMessage.textContent = "Saved";
-        savedMessage.classList.add('grid-saved');
-
-        alert('Layout saved');
-    }
+    console.log('Grid saved');
 }
 
+grid.on('change', function() {
+    saveGrid();
+});
+
 gridTrayToggle?.addEventListener('click', toggleGridTray);
-gridSaveBtn?.addEventListener('click', saveGrid);

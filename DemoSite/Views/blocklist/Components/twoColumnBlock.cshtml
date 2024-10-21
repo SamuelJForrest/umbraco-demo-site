@@ -8,13 +8,14 @@
     @if (settings.IsHidden) return;
 
     string blockMargin = FlexibleBlockHelpers.GetBlockMarginClass(settings.BlockMargin);
+    bool isAlignedRight = content.Alignment == DemoSite.Enums.TwoColumnAlignment.Right ? true : false;
 }
 
 <div class="flexibleblock @(blockMargin)">
     <section class="twocolumn">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 @(isAlignedRight ? "order-lg-2" : "")">
                     @if (content.Image != null)
                     {
                         <div class="twocolumn-image">
@@ -23,7 +24,7 @@
                     }
                 </div><!-- col -->
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 @(isAlignedRight ? "order-lg-1" : "")">
                     @if (content.Content != null && !string.IsNullOrWhiteSpace(content.Content.ToString()))
                     {
                         <div class="twocolumn-content">

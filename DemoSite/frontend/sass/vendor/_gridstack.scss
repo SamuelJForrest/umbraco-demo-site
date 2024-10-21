@@ -24,13 +24,6 @@
         }
     }
 
-    &-save {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        flex-wrap: wrap;
-    }
-
     &-tray {
         background: color.adjust(ut.$brand, $lightness: -25%);
         position: fixed;
