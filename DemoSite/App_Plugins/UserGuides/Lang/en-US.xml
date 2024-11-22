@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<language>
+	<area alias="dashboardTabs">
+		<key alias="userGuides">User Guides</key>
+		<key alias="userGuidesDashboard">User Guides</key>"
+		<key alias="userGuidesGroup">User Guides</key>
+		<key alias="userGuidesHelpDashboard">Help</key>
+	</area>
+</language>

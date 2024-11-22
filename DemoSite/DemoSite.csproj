@@ -7,6 +7,7 @@
   <ItemGroup>
     <Content Include="app_plugins\useragreementtour\backoffice\tours\tour.json" />
     <Content Include="App_Plugins\UserAgreementTour\user-agreement.html" />
+    <Content Include="App_Plugins\UserGuides\Lang\en-US.xml" />
     <Content Include="App_Plugins\UserGuides\user-guides-dashboard.html" />
     <Content Include="App_Plugins\UserGuides\user-guides.styles.css" />
   </ItemGroup>
@@ -16,6 +17,7 @@
     <None Include="App_Plugins\UserAgreementTour\user-agreement.controller.js" />
     <None Include="app_plugins\userguides\package.manifest" />
     <None Include="App_Plugins\UserGuides\user-guides.controller.js" />
+    <None Include="App_Plugins\UserGuides\user-guides.resource.js" />
   </ItemGroup>
 
   <ItemGroup>

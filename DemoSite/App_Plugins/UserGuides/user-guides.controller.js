@@ -1,5 +1,7 @@
 ﻿angular.module("umbraco")
-	.controller("UserGuidesDashboardController", function ($scope) {
+	.controller("UserGuidesDashboardController", function ($scope, $window) {
 		vm = this;
-		vm.title = "User Guides Test";
+
+		const domainName = $window.location.hostname;
+		$window.document.title = `User Guides - ${domainName}`;
 	});
