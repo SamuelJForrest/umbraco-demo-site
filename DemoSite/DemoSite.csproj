@@ -5,22 +5,22 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\CustomWelcomeDashboard\Lang\en-US.xml" />
-    <Content Include="App_Plugins\CustomWelcomeDashboard\WelcomeDashboard.html" />
-    <Content Include="app_plugins\testbackofficetour\backoffice\tours\tour.json" />
     <Content Include="app_plugins\useragreementtour\backoffice\tours\tour.json" />
     <Content Include="App_Plugins\UserAgreementTour\user-agreement.html" />
+    <Content Include="App_Plugins\UserGuides\user-guides-dashboard.html" />
+    <Content Include="App_Plugins\UserGuides\user-guides.styles.css" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app_plugins\customwelcomedashboard\package.manifest" />
     <None Include="App_Plugins\UserAgreementTour\init.js" />
     <None Include="app_plugins\useragreementtour\package.manifest" />
     <None Include="App_Plugins\UserAgreementTour\user-agreement.controller.js" />
+    <None Include="app_plugins\userguides\package.manifest" />
+    <None Include="App_Plugins\UserGuides\user-guides.controller.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms" Version="13.5.1" />
-    <PackageReference Include="Umbraco.Community.Contentment" Version="5.0.0" />
+    <PackageReference Include="Umbraco.Cms" Version="13.5.2" />
+    <PackageReference Include="Umbraco.Community.Contentment" Version="5.0.2" />
     <PackageReference Include="Umbraco.Community.Sustainability" Version="1.0.4" />
     <PackageReference Include="uSync" Version="13.2.5" />
   </ItemGroup>
@@ -32,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="App_Plugins\testBackofficeTour\backoffice\tours\" />
     <Folder Include="App_Plugins\UserAgreementTour\backoffice\tours\" />
   </ItemGroup>
 

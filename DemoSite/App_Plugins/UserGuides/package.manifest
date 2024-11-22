@@ -1,0 +1,10 @@
+{
+	"name": "UserGuides",
+	"version": "1.0.0",
+	"javascript": [
+		"~/App_Plugins/UserGuides/user-guides.controller.js"
+	],
+	"css": [
+		"~/App_Plugins/UserGuides/user-guides.styles.css"
+	]
+}
